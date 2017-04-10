@@ -17,14 +17,16 @@ Relation DataBase               MongoDB
 資料表(Table)                           Collection
 資料(Record/Row)                        Document
 欄位(Column)                            Field
-主索引(PK)                              id
-function                                unction ( )
-stored procedure                        mapreduce
+主索引(PK)                              _id
+function                               function ( )
+stored procedure                       mapreduce
 --------------------------------------------------------------------------
 ```
 
 ### MongoDB存儲資料格式
-在MongoDB是以 Json 格式存儲資料的，也就是所謂的Document其內容如下
+在MongoDB是以 Json 格式存儲資料的，也就是所謂的Document其內容如下  
+id是索引(PK)，這一個欄位如果你沒有指定的話，系統會自動的生成；email的欄位是一個Array型態可以儲存多筆子文件。  
+
 ```
 {
      _id:"A001",
