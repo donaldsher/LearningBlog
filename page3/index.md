@@ -43,7 +43,7 @@ sudo service mongod start
 [initandlisten] waiting for connections on port <port>
 ```  
 
-<port> 在 /etc/mongod.conf 裡做設定, 27017 是預設值.  
+Port 在 /etc/mongod.conf 裡做設定, 27017 是預設值.  
 
 3.停止MongoDB
 ```
