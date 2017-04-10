@@ -57,7 +57,8 @@ sudo service mongod restart
 5.開始使用MongoDB
 [MongoDB 官方文檔位置](https://docs.mongodb.com/master/#getting-started)  
 
-###解除安裝  
+
+### 解除安裝  
 
 停止MongoDB
 ```
@@ -67,7 +68,7 @@ sudo service mongod stop
 移除套件
 ```
 sudo apt-get purge mongodb-org*
-```
+```  
 
 移除資料庫以及log檔
 ```
