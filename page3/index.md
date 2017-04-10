@@ -41,7 +41,8 @@ sudo service mongod start
 檢視Log文件 /var/log/mongodb/mongod.log
 ```
 [initandlisten] waiting for connections on port <port>
-```
+```  
+
 <port> 在 /etc/mongod.conf 裡做設定, 27017 是預設值.  
 
 3.停止MongoDB
@@ -73,8 +74,6 @@ sudo apt-get purge mongodb-org*
 移除資料庫以及log檔
 ```
 sudo rm -r /var/log/mongodb
-```
-```
 sudo rm -r /var/lib/mongodb
 ```
 
