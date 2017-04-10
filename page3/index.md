@@ -73,6 +73,8 @@ sudo apt-get purge mongodb-org*
 移除資料庫以及log檔
 ```
 sudo rm -r /var/log/mongodb
+```
+```
 sudo rm -r /var/lib/mongodb
 ```
 
