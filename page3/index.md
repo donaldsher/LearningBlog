@@ -47,7 +47,7 @@ sudo service mongod start
 3.停止MongoDB
 ```
 sudo service mongod stop
-```
+```  
 
 4.重新啟動MongoDB
 ```
@@ -55,9 +55,9 @@ sudo service mongod restart
 ```  
 
 5.開始使用MongoDB
-[MongoDB 官方文檔位置](https://docs.mongodb.com/master/#getting-started)
+[MongoDB 官方文檔位置](https://docs.mongodb.com/master/#getting-started)  
 
-6.解除安裝
+###解除安裝  
 
 停止MongoDB
 ```
