@@ -1,8 +1,25 @@
-## Welcome to GitHub Pages
+## MongoDB介紹
 
-You can use the [editor on GitHub](https://github.com/donaldsher/blog/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+Mongo的資料體結構是以 Key,Value組合的，儲存的方式與Json格式完全相同，另外多了很多的靈活性，也就每一筆文件的是欄位的型態是不一定的，欄位的存在性也是不一定的。如果你學過Relation DataBase一定會很困惑，因為MSSQL、MySQL教我們要先設定Table Schema後，明確定義Table的Column和其型態，有利於資料整理、資料存儲、並執行正規化的行為…等。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+但在文本資料庫並沒有這樣子的限制，不過我認為雖然有這樣的彈性還是乖一點用Relation DataBase的設定概念來設計你的MongoDB資料庫。不然有一天一定天下大亂的。
+
+### Monogo特色
+1.MongoDB可以處理資料庫為 T級量 的資料庫，也就是處理大數據的資料庫。
+2.分散式的資料庫模式，可以把眾多資料庫串聯後處理大數的資料。
+
+### MongoDB的基本術語我們與Relation DataBase術語對照說明
+Relation DataBase                       MongoDB
+--------------------------------------------------------------------------
+資料庫(Database)                         DataBase
+資料表(Table)                            Collection
+資料(Record/Row)                         Document
+欄位(Column)                             Field
+主索引(PK)                               _id_
+function                                function ( )
+stored procedure                        mapreduce
+--------------------------------------------------------------------------
+
 
 ### Markdown
 
