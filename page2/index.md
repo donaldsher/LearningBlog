@@ -1,4 +1,4 @@
-## MongoDB介紹
+# MongoDB介紹123456
 
 Mongo的資料體結構是以 Key,Value組合的，儲存的方式與Json格式完全相同，另外多了很多的靈活性，也就每一筆文件的是欄位的型態是不一定的，欄位的存在性也是不一定的。如果你學過Relation DataBase一定會很困惑，因為MSSQL、MySQL教我們要先設定Table Schema後，明確定義Table的Column和其型態，有利於資料整理、資料存儲、並執行正規化的行為…等。
 
