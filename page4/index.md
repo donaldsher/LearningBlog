@@ -32,7 +32,8 @@ show dbs
 show collections
 ```  
 
-操作示範
+操作示範  
+
 ![img](https://donaldsher.github.io/LearningBlog/page4/1.png)
 
 [跳至首頁](https://donaldsher.github.io/LearningBlog/)
