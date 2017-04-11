@@ -18,7 +18,7 @@ db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
 ```  
 概念如下:  
 
-![img](https://donaldsher.github.io/LearningBlog/page4/0.png)
+![img](https://donaldsher.github.io/LearningBlog/page4/0.jpg)
 
 檢視mydbCollection集合內的文件數量
 ```
