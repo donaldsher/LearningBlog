@@ -69,3 +69,5 @@ db.people.update( {age: {$gt: 30}} , {$set: {past_it: true}}  , false, true)
 11.當用公網連接時，要注意和MongoDB的通信是未加密的  
 
 12.MongoDB會消耗太多的磁盤空間 , epairDatabase與compact命令也會在一定程度上幫到  
+
+[跳至首頁](https://donaldsher.github.io/LearningBlog/)

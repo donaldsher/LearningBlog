@@ -75,4 +75,6 @@ sudo apt-get purge mongodb-org*
 ```
 sudo rm -r /var/log/mongodb
 sudo rm -r /var/lib/mongodb
-```
+```  
+
+[跳至首頁](https://donaldsher.github.io/LearningBlog/)
