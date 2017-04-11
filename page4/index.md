@@ -1,6 +1,6 @@
 ## MongoDB 基本 CRUD(新增、修改、查詢、刪除) 使用
 
-### 創建  
+### 新增  
 
 切換到叫mydb的db  
 ```
@@ -12,10 +12,13 @@ use mydb
 db
 ```
 
-在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合
+在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合  
 ```
 db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
-```
+```  
+概念如下:  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/0.png)
 
 檢視mydbCollection集合內的文件數量
 ```
