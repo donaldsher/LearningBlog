@@ -55,7 +55,7 @@ db.mydbCollection.insertMany([{Name:"Amy",Age:"32"},{Name:"Chris",Age:"29"}])
 ![img](https://donaldsher.github.io/LearningBlog/page4/2.png)  
 
 
-### 讀取  
+### 讀取
 
 讀取剛剛集合理的所有文件(沒有設判斷)
 ```
@@ -73,9 +73,13 @@ db.mydbCollection.find({Name:"Amy"})
 
 可以使用比較語句來找讀取指定的文件  
 
-$eq 匹配指定值的值  
+$eq Equality(匹配指定值的值)
 ```
-```
+db.mydbCollection.find({Name:{$eq:"Amy"}})
+```  
+結果就會跟上面的 db.mydbCollection.find({Name:"Amy"})一樣
+![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
+
 
 $gt 匹配比指定值更大的值
 ```
