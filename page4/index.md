@@ -6,7 +6,7 @@
 
 切換到叫mydb的db  
 ```
--use mydb
+use mydb
 ```  
 
 目前的db
@@ -77,7 +77,8 @@ db.mydbCollection.find({Name:"Amy"})
 
 可以使用比較語句來找讀取指定的資料(文件 document)  
 
-**$eq**
+**$eq**  
+
 Equality(匹配指定值的值的資料)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
@@ -87,31 +88,36 @@ db.mydbCollection.find({Name:{$eq:"Amy"}})
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-**$gt**
+**$gt**  
+
 Greater Than(匹配比指定值更大的值的資料)
 ```
 db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-**$gte**
+**$gte**  
+
 Greater Than Equals(匹配大於或等於指定值的資料)
 ```
 db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
-**$lt**
+**$lt**  
+
 Less Than(匹配小於指定值的資料)  
 ```
 db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-`5.` $lte
+**$lte**  
+
 Less Than Equals(匹配小於或等於指定值的所有資料)  
 ```
 db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-**$ne**
+**$ne**  
+
 Not Equals(匹配不等於指定值的所有資料)
 ```
 db.mydbCollection.find({Age:{$ne:"29"}})
@@ -121,13 +127,15 @@ db.mydbCollection.find({Age:{$ne:"29"}})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
-**$in**
+**$in**  
+
 匹配在陣列中的值
 ```
 db.mydbCollection.find({Name:{$in:["Amy","Chris"]}})
 ```
 
-**$nin**
+**$nin**  
+
 Not In(匹配沒有在陣列中的值)
 ```
 db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
@@ -138,14 +146,15 @@ db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
 ![img](https://donaldsher.github.io/LearningBlog/page4/6.png)
 
 
-也可以利用pretty() 這個funtion 讓資料檢視比較易閱讀  
+也可以利用pretty() 這個Function 讓資料檢視比較易閱讀  
 ```
 db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
 ```  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
-**$and**
+**$and**  
+
 and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有資料
 ```
 db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
@@ -154,7 +163,8 @@ db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ![img](https://donaldsher.github.io/LearningBlog/page4/8.png)  
 
 
-**$or**
+**$or**  
+
 or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)的資料
 ```
 db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
