@@ -41,7 +41,7 @@ show collections
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/1.png)  
 
-1. 3.2版本 增加Function
+**3.2版本 增加Function**
 
 新增單筆並檢視資料  
 ```
@@ -77,41 +77,41 @@ db.mydbCollection.find({Name:"Amy"})
 
 可以使用比較語句來找讀取指定的資料(文件 document)  
 
-1. $eq
+**$eq**
 Equality(匹配指定值的值的資料)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
 ```  
-結果就會跟上面的 db.mydbCollection.find({Name:"Amy"})  一樣  
+結果就會跟上面的 `db.mydbCollection.find({Name:"Amy"})`  一樣  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-2. $gt
+**$gt**
 Greater Than(匹配比指定值更大的值的資料)
 ```
 db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-3. $gte
+**$gte**
 Greater Than Equals(匹配大於或等於指定值的資料)
 ```
 db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
-4. $lt
+**$lt**
 Less Than(匹配小於指定值的資料)  
 ```
 db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-5. $lte
+`5.` $lte
 Less Than Equals(匹配小於或等於指定值的所有資料)  
 ```
 db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-6. $ne
+**$ne**
 Not Equals(匹配不等於指定值的所有資料)
 ```
 db.mydbCollection.find({Age:{$ne:"29"}})
@@ -121,13 +121,13 @@ db.mydbCollection.find({Age:{$ne:"29"}})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
-7. $in
+**$in**
 匹配在陣列中的值
 ```
 db.mydbCollection.find({Name:{$in:["Amy","Chris"]}})
 ```
 
-8. $nin
+**$nin**
 Not In(匹配沒有在陣列中的值)
 ```
 db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
@@ -145,7 +145,7 @@ db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
-9. $and
+**$and**
 and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有資料
 ```
 db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
@@ -154,7 +154,7 @@ db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ![img](https://donaldsher.github.io/LearningBlog/page4/8.png)  
 
 
-10. $or
+**$or**
 or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)的資料
 ```
 db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
@@ -171,7 +171,7 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 更新的Function 主要是 Update()與Save()  
 
-1. Update()
+**Update()**
 
 利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
 ```
@@ -187,11 +187,11 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 ![img](https://donaldsher.github.io/LearningBlog/page4/11.png)
 
 
-2. Save()
+**Save()**
 
 利用_id索引 直接替換資料文件  
 
-將_id索引值為58ecb8113bdd158ca3dddcf0 的文件替換成 {Name:"Lisa",Age:20}  
+將_id索引值為58ecb8113bdd158ca3dddcf0 的文件替換成 `{Name:"Lisa",Age:20}`
 ```
 db.mydbCollection.save({"_id":ObjectId("58ecb8113bdd158ca3dddcf0"),"Name":"Lisa","Age":20})
 ```
