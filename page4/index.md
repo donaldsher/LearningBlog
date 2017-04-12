@@ -41,7 +41,7 @@ show collections
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/1.png)  
 
-3.2版本 增加Function
+- 3.2版本 增加Function
 
 新增單筆並檢視資料  
 ```
@@ -77,7 +77,8 @@ db.mydbCollection.find({Name:"Amy"})
 
 可以使用比較語句來找讀取指定的資料(文件 document)  
 
-$eq Equality(匹配指定值的值的資料)
+- $eq
+Equality(匹配指定值的值的資料)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
 ```  
@@ -86,27 +87,32 @@ db.mydbCollection.find({Name:{$eq:"Amy"}})
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-$gt     Greater Than(匹配比指定值更大的值的資料)
+- $gt
+Greater Than(匹配比指定值更大的值的資料)
 ```
 db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-$gte    Greater Than Equals(匹配大於或等於指定值的資料)
+- $gte
+Greater Than Equals(匹配大於或等於指定值的資料)
 ```
 db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
-$lt     Less Than(匹配小於指定值的資料)  
+- $lt
+Less Than(匹配小於指定值的資料)  
 ```
 db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-$lte    Less Than Equals(匹配小於或等於指定值的所有資料)  
+- $lte
+Less Than Equals(匹配小於或等於指定值的所有資料)  
 ```
 db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-$ne     Not Equals(匹配不等於指定值的所有資料)
+- $ne
+Not Equals(匹配不等於指定值的所有資料)
 ```
 db.mydbCollection.find({Age:{$ne:"29"}})
 ```  
@@ -115,12 +121,14 @@ db.mydbCollection.find({Age:{$ne:"29"}})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
-$in     匹配在陣列中的值
+- $in
+匹配在陣列中的值
 ```
 db.mydbCollection.find({Name:{$in:["Amy","Chris"]}})
 ```
 
-$nin    匹配沒有在陣列中的值
+- $nin
+Not In(匹配沒有在陣列中的值)
 ```
 db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
 ```  
@@ -137,8 +145,8 @@ db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
-
-$and    and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有資料
+- $and
+and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有資料
 ```
 db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ```  
@@ -146,7 +154,8 @@ db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ![img](https://donaldsher.github.io/LearningBlog/page4/8.png)  
 
 
-$or     or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)的資料
+- $or
+or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)的資料
 ```
 db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 ```    
@@ -162,6 +171,7 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 更新的Function 主要是 Update()與Save()  
 
+- Update()
 
 利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
 ```
@@ -177,7 +187,22 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 ![img](https://donaldsher.github.io/LearningBlog/page4/11.png)
 
 
+- Save()
 
+利用_id索引 直接替換資料文件  
+
+將_id索引值為58ecb8113bdd158ca3dddcf0 的文件替換成 {Name:"Lisa",Age:20}  
+```
+db.mydbCollection.save({"_id":ObjectId("58ecb8113bdd158ca3dddcf0"),"Name":"Lisa","Age":20})
+```
+
+結果  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/12.png)  
+
+查詢  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/13.png)
 
 
 
