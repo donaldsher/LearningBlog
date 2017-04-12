@@ -75,7 +75,7 @@ db.mydbCollection.find({Name:"Amy"})
 ![img](https://donaldsher.github.io/LearningBlog/page4/3.png)
 
 
-可以使用比較語句來找讀取指定的資料(文件 document)  
+可以使用運算元來找讀取指定的資料(文件 document)  
 
 **$eq**  
 
@@ -195,6 +195,28 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 搭配前面的讀取語句  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/11.png)
+
+更新運算元 $set,$unset,$rename  
+
+- $set
+更新欄位中的值
+
+- $unset
+將欄位中的值設為null(unassigned)
+```
+db.mydbCollection.update({Name:"Chris"},{$unset:{Age:""}})
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/16.png)
+
+- $rename
+將欄位更名
+```
+db.mydbCollection.update({Name:"Seteve"},{$rename:{Age:"age"}})
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/17.png)
+
 
 
 **Save()**

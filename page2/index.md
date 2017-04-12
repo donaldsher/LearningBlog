@@ -13,19 +13,29 @@ Mongo的資料體結構是以 Key,Value組合的，儲存的方式與Json格式�
 ```
 Relation DataBase               MongoDB
 --------------------------------------------------------------------------
-資料庫(Database)                        DataBase
-資料表(Table)                           Collection
-資料(Record/Row)                        Document
-欄位(Column)                            Field
+資料庫(Database)                        DataBase(資料庫)
+資料表(Table)                           Collection(集合)
+資料(Record/Row)                        Document(資料)
+欄位(Column)                            Field(欄位)
 主索引(PK)                              _id
 function                               function ( )
 stored procedure                       mapreduce
 --------------------------------------------------------------------------
 ```
 
+資料結構：
+Mongodb儲存資料的結構稱document，為一種JSON-like(field-value)組合的格式。
+與一般關連式資料庫不同，Mongodb是一種無schema(綱要)的資料庫，它的結構是動態的。
+如果你曾經使用Json來進行資料的操作，那對於這種field-value資料格式一定不陌生。
+
+何謂field-value型式資料？ field-value型式資料就是一個欄位對應一個值的資料格式，
+
+
+
+
 ### MongoDB存儲資料格式
 在MongoDB是以 Json 格式存儲資料的，也就是所謂的Document其內容如下  
-id是索引(PK)，這一個欄位如果你沒有指定的話，系統會自動的生成；email的欄位是一個Array型態可以儲存多筆子文件。  
+id是索引(PK)，這一個欄位的值如果你沒有指定的話，系統會自動的生成；email這個欄位的值是一個Array型態可以儲存多筆子文件。  
 
 ```
 {
