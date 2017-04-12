@@ -201,7 +201,7 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 
 利用_id索引 直接替換資料文件  
 
-將_id索引值為58ecb8113bdd158ca3dddcf0 的文件替換成 `{Name:"Lisa",Age:20}`
+將_id索引值為`58ecb8113bdd158ca3dddcf0` 的文件替換成 `{Name:"Lisa",Age:20}`
 ```
 db.mydbCollection.save({"_id":ObjectId("58ecb8113bdd158ca3dddcf0"),"Name":"Lisa","Age":20})
 ```
