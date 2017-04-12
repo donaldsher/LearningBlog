@@ -141,12 +141,14 @@ $and and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的�
 db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ```  
 
-![img](https://donaldsher.github.io/LearningBlog/page4/8.png)
+![img](https://donaldsher.github.io/LearningBlog/page4/8.png)  
+
 
 $or or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)  
 ```
 db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
-```  
+```    
+
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/9.png)
 
