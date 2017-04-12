@@ -183,6 +183,11 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 **Update()**
 
+update的更新運算元 有 $set,$unset,$rename  
+
+**$set**
+更新欄位中的值
+
 利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
 ```
 db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":50}},{multi:true})
@@ -196,12 +201,9 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/11.png)
 
-更新運算元 $set,$unset,$rename  
 
-- $set
-更新欄位中的值
 
-- $unset
+**$unset**
 將欄位中的值設為null(unassigned)
 ```
 db.mydbCollection.update({Name:"Chris"},{$unset:{Age:""}})
@@ -209,7 +211,7 @@ db.mydbCollection.update({Name:"Chris"},{$unset:{Age:""}})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/16.png)
 
-- $rename
+**$rename**
 將欄位更名
 ```
 db.mydbCollection.update({Name:"Seteve"},{$rename:{Age:"age"}})
