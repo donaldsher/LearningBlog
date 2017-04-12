@@ -171,6 +171,7 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 更新的Function 主要是 Update()與Save()  
 
+-
 - Update()
 
 利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
