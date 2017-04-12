@@ -1,6 +1,7 @@
-## MongoDB 基本 CRUD(新增、讀取、更新、刪除) 使用
+# MongoDB 基本 CRUD(新增、讀取、更新、刪除) 使用  
 
-### 新增  
+
+## 新增  
 
 切換到叫mydb的db  
 ```
@@ -55,7 +56,7 @@ db.mydbCollection.insertMany([{Name:"Amy",Age:"32"},{Name:"Chris",Age:"29"}])
 ![img](https://donaldsher.github.io/LearningBlog/page4/2.png)  
 
 
-### 讀取
+## 讀取
 
 讀取剛剛集合理的所有文件(沒有設判斷)
 ```
@@ -134,6 +135,26 @@ db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
+
+$and and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有值
+```
+db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/8.png)
+
+$or or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)  
+```
+db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/9.png)
+
+
+
+
+
+## 更新
 
 
 
