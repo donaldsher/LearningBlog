@@ -67,7 +67,8 @@ db.mydbCollection.find()
 db.mydbCollection.find({Name:"Amy"})
 ```  
 
-操作截圖
+操作截圖  
+
 ![img](https://donaldsher.github.io/LearningBlog/page4/3.png)
 
 
@@ -77,34 +78,38 @@ $eq Equality(匹配指定值的值)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
 ```  
-結果就會跟上面的 db.mydbCollection.find({Name:"Amy"})一樣
+結果就會跟上面的 db.mydbCollection.find({Name:"Amy"})  一樣  
+
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-$gt 匹配比指定值更大的值
+$gt Greater Than(匹配比指定值更大的值)
 ```
-
+db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-$gte 匹配大於或等於指定值的值
+$gte Greater Than Equals(匹配大於或等於指定值的值)
+```
+db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
+$lt Less Than(匹配小於指定值的值)  
 ```
-
-$lt 匹配小於指定值的值  
-```
-
+db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-$lte 匹配小於或等於指定值的值  
+$lte Less Than Equals(匹配小於或等於指定值的值)  
 ```
-
+db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-$ne 匹配不等於指定值得所有值
+$ne Not Equals(匹配不等於指定值得所有值)
 ```
-
+db.mydbCollection.find({Age:{$ne:"29"}})
 ```  
+
+結果
+![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
 $in  匹配指定陣列中規定的值的所有值
 ```
