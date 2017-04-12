@@ -75,9 +75,9 @@ db.mydbCollection.find({Name:"Amy"})
 ![img](https://donaldsher.github.io/LearningBlog/page4/3.png)
 
 
-可以使用比較語句來找讀取指定的文件  
+可以使用比較語句來找讀取指定的資料(文件 document)  
 
-$eq Equality(匹配指定值的值)
+$eq Equality(匹配指定值的值的資料)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
 ```  
@@ -86,27 +86,27 @@ db.mydbCollection.find({Name:{$eq:"Amy"}})
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-$gt     Greater Than(匹配比指定值更大的值)
+$gt     Greater Than(匹配比指定值更大的值的資料)
 ```
 db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-$gte    Greater Than Equals(匹配大於或等於指定值的值)
+$gte    Greater Than Equals(匹配大於或等於指定值的資料)
 ```
 db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
-$lt     Less Than(匹配小於指定值的值)  
+$lt     Less Than(匹配小於指定值的資料)  
 ```
 db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-$lte    Less Than Equals(匹配小於或等於指定值的值)  
+$lte    Less Than Equals(匹配小於或等於指定值的所有資料)  
 ```
 db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-$ne     Not Equals(匹配不等於指定值得所有值)
+$ne     Not Equals(匹配不等於指定值的所有資料)
 ```
 db.mydbCollection.find({Age:{$ne:"29"}})
 ```  
@@ -174,7 +174,7 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 
 搭配前面的讀取語句  
 
-![img](https://donaldsher.github.io/LearningBlog/page4/11.png) 
+![img](https://donaldsher.github.io/LearningBlog/page4/11.png)
 
 
 
