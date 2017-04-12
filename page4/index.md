@@ -3,17 +3,17 @@
 
 ## 新增  
 
-切換到叫mydb的db  
+-切換到叫mydb的db  
 ```
-use mydb
+-use mydb
 ```  
 
-目前的db
+-目前的db
 ```
 db
 ```
 
-在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合  
+-在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合  
 ```
 db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
 ```  
@@ -21,12 +21,12 @@ db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/0.jpg)
 
-檢視mydbCollection集合內的文件數量
+-檢視mydbCollection集合內的文件數量
 ```
 db.mydbCollection.count()
 ```
 
-檢視資料庫中的所有db
+-檢視資料庫中的所有db
 ```
 show dbs
 ```
