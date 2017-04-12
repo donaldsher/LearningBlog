@@ -83,7 +83,7 @@ Equality(匹配指定值的值的資料)
 ```
 db.mydbCollection.find({Name:{$eq:"Amy"}})
 ```  
-結果就會跟上面的 `db.mydbCollection.find({Name:"Amy"})`  一樣  
+結果就會跟上面的 `db.mydbCollection.find({Name:"Amy"})`  一樣  找到Name的值是Amy的資料
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
@@ -213,6 +213,29 @@ db.mydbCollection.save({"_id":ObjectId("58ecb8113bdd158ca3dddcf0"),"Name":"Lisa"
 查詢  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/13.png)
+
+
+### 刪除  
+
+**Remove()**
+
+將_id索引值為`58ecb8113bdd158ca3dddcf0` 的文件 刪除
+```
+db.mydbCollection.remove({"_id":ObjectId("58ecb8113bdd158ca3dddcf0")})
+```  
+結果
+
+![img](https://donaldsher.github.io/LearningBlog/page4/14.png)
+
+
+移除搜索到的第一筆資料  範例是移除第一筆 Age欄位是50的資料
+```
+db.mydbCollection.remove({Age:{$eq:50}},1)
+```  
+結果  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/15.png)
+
 
 
 
