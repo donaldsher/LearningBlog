@@ -108,19 +108,31 @@ $ne Not Equals(匹配不等於指定值得所有值)
 db.mydbCollection.find({Age:{$ne:"29"}})
 ```  
 
-結果
+結果  
+
 ![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
-$in  匹配指定陣列中規定的值的所有值
+$in  匹配在陣列中的值
+```
+db.mydbCollection.find({Name:{$in:["Amy","Chris"]}})
 ```
 
+$nin 匹配沒有在陣列中的值
 ```
-
-$nin 匹配沒有在指定陣列中規定的值得所有值
-```
-
+db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
 ```  
 
+結果  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/6.png)
+
+
+也可以利用pretty() 這個funtion 讓資料檢視比較易閱讀  
+```
+db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
 
 
