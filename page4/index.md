@@ -1,19 +1,20 @@
-# MongoDB 基本 CRUD(新增、讀取、更新、刪除) 使用  
+## MongoDB 基本 CRUD(新增、讀取、更新、刪除) 使用  
 
 
-## 新增  
 
-- 切換到叫mydb的db  
+### 新增  
+
+切換到叫mydb的db  
 ```
 -use mydb
 ```  
 
-- 目前的db
+目前的db
 ```
 db
 ```
 
-- 在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合  
+在mydb(當前db)中的mydbCollection集合中插入一個文件(json)，沒有此集合便會產生一個叫myCollection的集合  
 ```
 db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
 ```  
@@ -21,17 +22,17 @@ db.mydbCollection.insert({Name:"Chris",Age:"32",Tel:"+891 335971"})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/0.jpg)
 
-- 檢視mydbCollection集合內的文件數量
+檢視mydbCollection集合內的文件數量
 ```
 db.mydbCollection.count()
 ```
 
-- 檢視資料庫中的所有db
+檢視資料庫中的所有db
 ```
 show dbs
 ```
 
-- 檢視mydb(當前db)中的所有集合
+檢視mydb(當前db)中的所有集合
 ```
 show collections
 ```  
@@ -40,7 +41,7 @@ show collections
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/1.png)  
 
-- 3.2版本 增加Function
+3.2版本 增加Function
 
 新增單筆並檢視資料  
 ```
@@ -56,7 +57,8 @@ db.mydbCollection.insertMany([{Name:"Amy",Age:"32"},{Name:"Chris",Age:"29"}])
 ![img](https://donaldsher.github.io/LearningBlog/page4/2.png)  
 
 
-## 讀取
+
+### 讀取
 
 讀取剛剛集合理的所有文件(沒有設判斷)
 ```
@@ -84,27 +86,27 @@ db.mydbCollection.find({Name:{$eq:"Amy"}})
 ![img](https://donaldsher.github.io/LearningBlog/page4/4.png)
 
 
-$gt Greater Than(匹配比指定值更大的值)
+$gt     Greater Than(匹配比指定值更大的值)
 ```
 db.mydbCollection.find({Age:{$gt:"24"}})
 ```  
 
-$gte Greater Than Equals(匹配大於或等於指定值的值)
+$gte    Greater Than Equals(匹配大於或等於指定值的值)
 ```
 db.mydbCollection.find({Age:{$gte:"32"}})
 ```
 
-$lt Less Than(匹配小於指定值的值)  
+$lt     Less Than(匹配小於指定值的值)  
 ```
 db.mydbCollection.find({Age:{$lt:"30"}})
 ```  
 
-$lte Less Than Equals(匹配小於或等於指定值的值)  
+$lte    Less Than Equals(匹配小於或等於指定值的值)  
 ```
 db.mydbCollection.find({Age:{$gt:"29"}})
 ```  
 
-$ne Not Equals(匹配不等於指定值得所有值)
+$ne     Not Equals(匹配不等於指定值得所有值)
 ```
 db.mydbCollection.find({Age:{$ne:"29"}})
 ```  
@@ -113,12 +115,12 @@ db.mydbCollection.find({Age:{$ne:"29"}})
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/5.png)
 
-$in  匹配在陣列中的值
+$in     匹配在陣列中的值
 ```
 db.mydbCollection.find({Name:{$in:["Amy","Chris"]}})
 ```
 
-$nin 匹配沒有在陣列中的值
+$nin    匹配沒有在陣列中的值
 ```
 db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}})
 ```  
@@ -136,7 +138,7 @@ db.mydbCollection.find({Name:{$nin:["Amy","Chris"]}}).pretty()
 ![img](https://donaldsher.github.io/LearningBlog/page4/7.png)
 
 
-$and and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有值
+$and    and運算元  以下範例讀取 匹配含有兩個鍵值(key與value)的所有資料
 ```
 db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ```  
@@ -144,7 +146,7 @@ db.mydbCollection.find({$and:[{"Name":"Amy"},{"Age":"32"}]}).pretty()
 ![img](https://donaldsher.github.io/LearningBlog/page4/8.png)  
 
 
-$or or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)  
+$or     or運算元 以下範例讀取 匹配含有兩個其中之一的鍵值(key與value)的資料
 ```
 db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 ```    
@@ -156,7 +158,26 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 
 
-## 更新
+### 更新  
+
+更新的Function 主要是 Update()與Save()  
+
+
+利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
+```
+db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":50}},{multi:true})
+```  
+
+結果  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/10.png)  
+
+搭配前面的讀取語句  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/11.png) 
+
+
+
 
 
 
