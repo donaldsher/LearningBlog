@@ -199,9 +199,11 @@ db.mydbCollection.find({$or:[{"Name":"Seteve"},{"Name":"Amy"}]})
 
 **Update()**
 
-update的更新運算元 有 $set,$unset,$rename  
+update的基本更新運算元 有 $set,$unset,$rename  
 
-**$set**
+
+**$set**  
+
 更新欄位中的值
 
 利用Update() 將匹配到Name含有Seteve或Amy的文件 更新Age的值為50
@@ -209,7 +211,12 @@ update的更新運算元 有 $set,$unset,$rename
 db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":50}},{multi:true})
 ```  
 
-結果  
+**Multi**  
+
+同時寫入多筆
+
+
+範例  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/10.png)  
 
@@ -219,21 +226,100 @@ db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":5
 
 
 
-**$unset**
-將欄位中的值設為null(unassigned)
+**$unset**  
+
+將Age欄位中的值設為null(unassigned) 這將會刪除欄位
 ```
 db.mydbCollection.update({Name:"Chris"},{$unset:{Age:""}})
 ```  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/16.png)
 
-**$rename**
-將欄位更名
+**$rename**  
+
+將Age欄位名稱更名為age
 ```
 db.mydbCollection.update({Name:"Seteve"},{$rename:{Age:"age"}})
 ```  
 
 ![img](https://donaldsher.github.io/LearningBlog/page4/17.png)
+
+
+也還有 $inc,  $push, $pop, $pushAll, $addToSet, upsert, multi 的指令  
+
+**$inc**  
+
+increments 用來增減量的運算元  
+
+範例將 Amy 的 Age 更新 增加了3
+```
+db.mydbCollection.update({name:"Amy"},{$inc:{Age:3}})
+```
+
+![img](https://donaldsher.github.io/LearningBlog/page4/21.png)
+
+
+**$upsert**  
+
+如果搜尋不到此欄位，會無法進行更新，如果將此運算元設定為true，會在新增一個欄位進去  
+```
+db.mydbCollection.update({name:"Amy"},{$set:{sex:"female"}},{$upsert:true})
+```
+
+![img](https://donaldsher.github.io/LearningBlog/page4/22.png)
+
+
+**對陣列的更新 使用堆疊**
+
+**$push**  
+
+將Duck塞入 Kind陣列堆疊中
+```
+db.mydbCollection.update({Type:"Animal"},{$push:{Kind:"dog"}})
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/23.png)
+
+
+**$pop**
+
+將Kind陣列堆疊 的最後一筆 將Duck移除
+```
+db.mydbCollection.update({"Type":"Animal"},{$pop:{"Kind":1}})
+```
+
+![img](https://donaldsher.github.io/LearningBlog/page4/24.png)
+
+
+如果將pop的參數改為 -1  便可移除第一筆
+```
+db.mydbCollection.update({"Type":"Animal"},{$pop:{"Kind":-1}})
+```  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/25.png)  
+
+
+**$pushAll**  
+
+將多筆資料塞入陣列堆疊中  這邊重新將 Mouse 跟  Duck 同時塞入陣列中
+```
+db.mydbCollection.update({"Type":"Animal"},{$pushAll:{"Kind":["Mouse","Duck"]})
+```
+
+![img](https://donaldsher.github.io/LearningBlog/page4/26.png)  
+
+
+**$pull**  
+
+移除陣列中的 指定資料  
+
+範例是移除 Kind欄位中的 Mouse
+```
+db.mydbCollection.update({"Type":"Animal"},{$pull:{"Kind":"Mouse"}})
+```
+
+![img](https://donaldsher.github.io/LearningBlog/page4/27.png)  
+
 
 
 
