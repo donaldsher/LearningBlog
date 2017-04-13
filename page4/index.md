@@ -58,6 +58,7 @@ db.mydbCollection.insertMany([{Name:"Amy",Age:"32"},{Name:"Chris",Age:"29"}])
 
 
 
+
 ### 讀取
 
 讀取剛剛集合理的所有文件(沒有設判斷)
@@ -72,7 +73,22 @@ db.mydbCollection.find({Name:"Amy"})
 
 操作截圖  
 
-![img](https://donaldsher.github.io/LearningBlog/page4/3.png)
+![img](https://donaldsher.github.io/LearningBlog/page4/3.png)  
+
+概念如下:  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/18.png)  
+
+Query是條件，Projection是顯示(顯示欄位)，Modifier是修飾(可以是排序、限制數量)
+
+以下範例: Query為空的，Projection是顯示Age欄位，Modifier加入針對Age進行生序排序
+
+![img](https://donaldsher.github.io/LearningBlog/page4/19.png)  
+
+範例再加入限制三筆資料:  
+
+![img](https://donaldsher.github.io/LearningBlog/page4/20.png)  
+
 
 
 可以使用運算元來找讀取指定的資料(文件 document)  
