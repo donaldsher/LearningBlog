@@ -211,9 +211,9 @@ update的基本更新運算元 有 $set,$unset,$rename
 db.mydbCollection.update({$or:[{"Name":"Seteve"},{"Name":"Amy"}]},{$set:{"Age":50}},{multi:true})
 ```  
 
-**Multi**  
+**multi(boolean)**  
 
-同時寫入多筆
+true時 開啟同時寫入多筆，預設為單筆
 
 
 範例  
